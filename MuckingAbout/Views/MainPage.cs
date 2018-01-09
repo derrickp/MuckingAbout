@@ -8,7 +8,7 @@ namespace MuckingAbout
     {
         public MainPage()
         {
-            Page itemsPage, aboutPage, usersPage = null;
+            Page itemsPage, aboutPage, usersPage, blogPage = null;
 
             switch (Device.RuntimePlatform)
             {
@@ -26,9 +26,15 @@ namespace MuckingAbout
                     {
                         Title = "Users"
                     };
+                    blogPage = new BlogPage()
+                    {
+                        Title = "Blog"
+                    };
+                    break;
                     itemsPage.Icon = "tab_feed.png";
                     aboutPage.Icon = "tab_about.png";
                     usersPage.Icon = "tab_about.png";
+                    blogPage.Icon = "tab_about.png";
                     break;
                 default:
                     itemsPage = new ItemsPage()
@@ -44,12 +50,17 @@ namespace MuckingAbout
                     {
                         Title = "Users"
                     };
+                    blogPage = new BlogPage()
+                    {
+                        Title = "Blog"
+                    };
                     break;
             }
 
             Children.Add(itemsPage);
             Children.Add(aboutPage);
             Children.Add(usersPage);
+            Children.Add(blogPage);
 
             Title = Children[0].Title;
         }

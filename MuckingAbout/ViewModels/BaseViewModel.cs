@@ -11,6 +11,7 @@ namespace MuckingAbout
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
         public IDataStore<User> UserStore => DependencyService.Get<IDataStore<User>>() ?? new UserStore();
+        public IDataStore<BlogPost> BlogStore => DependencyService.Get<IDataStore<BlogPost>>() ?? new BlogStore();
 
         bool isBusy = false;
         public bool IsBusy
