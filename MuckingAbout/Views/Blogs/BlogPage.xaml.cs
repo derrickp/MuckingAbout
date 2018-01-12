@@ -18,7 +18,9 @@ namespace MuckingAbout
         {
             var item = args.SelectedItem as BlogPost;
             if (item == null)
+            {
                 return;
+            }
 
             await Navigation.PushAsync(new BlogDetailsPage(new BlogDetailsViewModel(item)));
 
