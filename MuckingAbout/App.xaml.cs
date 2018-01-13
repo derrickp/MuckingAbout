@@ -8,6 +8,7 @@ namespace MuckingAbout
     {
         public static bool UseMockDataStore = true;
         public static string BackendUrl = "https://localhost:5000";
+        public static string ApiUrl = "http://dentedlotus.com:8080";
 
         public App()
         {

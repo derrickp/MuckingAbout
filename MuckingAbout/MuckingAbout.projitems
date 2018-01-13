@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UsersViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AuthenticationState.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
