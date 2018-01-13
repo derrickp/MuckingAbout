@@ -1,14 +1,19 @@
 ﻿using System;
 
 using Xamarin.Forms;
+using Xamarin.Auth;
 
 namespace MuckingAbout
 {
     public class MainPage : TabbedPage
     {
+        AccountStore store;
+
         public MainPage()
         {
             Page itemsPage, aboutPage, usersPage, blogPage = null;
+            store = AccountStore.Create();
+
 
             switch (Device.RuntimePlatform)
             {
@@ -61,6 +66,27 @@ namespace MuckingAbout
             Children.Add(aboutPage);
             Children.Add(usersPage);
             Children.Add(blogPage);
+
+            //var authenticator = new OAuth2Authenticator(
+            //    clientId,
+            //    null,
+            //    "https://www.googleapis.com/auth/userinfo.email",
+            //    new Uri("https://accounts.google.com/o/oauth2/auth"),
+            //    new Uri(redirectUrl),
+            //    new Uri("https://www.googleapis.com/oauth2/v4/token"),
+            //    null,
+            //    true);
+
+            //authenticator.Completed += (sender, e) => {
+            //    Console.WriteLine("Authenticated");
+            //    Console.WriteLine(e.IsAuthenticated);
+            //    Console.WriteLine("End Authenticated");
+            //};
+
+            //AuthenticationState.Authenticator = authenticator;
+
+            //var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            //presenter.Login(authenticator);
 
             Title = Children[0].Title;
         }
