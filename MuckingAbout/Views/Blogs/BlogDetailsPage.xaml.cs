@@ -41,7 +41,7 @@ namespace MuckingAbout
         }
 
         private StackLayout _GetHeader()
-        { 
+        {
 
             var author = new Label()
             {
@@ -62,7 +62,7 @@ namespace MuckingAbout
             var header = new StackLayout
             {
                 Children =
-                { 
+                {
                     author,
                     date
                 }
@@ -72,14 +72,15 @@ namespace MuckingAbout
 
         private WebView _GetPostView()
         {
-            var webView = new AppWebView()
-            { 
-                HeightRequest = 400,
-                WidthRequest = 100
+            var htmlSource = new HtmlWebViewSource();
+            htmlSource.Html = viewModel.BlogPost.Message;
+            var browser = new WebView()
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Source = htmlSource
             };
-
-            webView.SetHtml(viewModel.BlogPost.Message);  
-            return webView;
+            return browser;
         }
 
         private void _Navigating(object sender, WebNavigatingEventArgs args)
