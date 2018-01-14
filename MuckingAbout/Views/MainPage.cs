@@ -31,11 +31,10 @@ namespace MuckingAbout
                     {
                         Title = "Users"
                     };
-                    blogPage = new BlogPage()
+                    blogPage = new NavigationPage(new BlogPage())
                     {
                         Title = "Blog"
                     };
-                    break;
                     itemsPage.Icon = "tab_feed.png";
                     aboutPage.Icon = "tab_about.png";
                     usersPage.Icon = "tab_about.png";
